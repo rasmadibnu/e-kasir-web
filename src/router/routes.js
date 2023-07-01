@@ -17,9 +17,50 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "",
-        component: () => import("pages/IndexPage.vue"),
+        path: "/dashboard",
+        component: () => import("pages/UnderConstruction.vue"),
         name: "Home",
+      },
+      {
+        path: "/transaksi",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Transaksi",
+      },
+      {
+        path: "/stok",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Stok",
+      },
+      {
+        path: "/kurir",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Kurir",
+      },
+      {
+        path: "/laporan",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Laporan",
+      },
+
+      {
+        path: "/kategori",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Kategori",
+      },
+      {
+        path: "/produk",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Produk",
+      },
+      {
+        path: "/supplier",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "Supplier",
+      },
+      {
+        path: "/user",
+        component: () => import("pages/UnderConstruction.vue"),
+        name: "User",
       },
     ],
   },

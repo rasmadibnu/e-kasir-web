@@ -77,6 +77,11 @@ export default defineComponent({
       loading: ref(false),
     };
   },
+  mounted() {
+    if (sessionStorage.getItem("access_token")) {
+      this.$router.push({ name: "Home" });
+    }
+  },
   methods: {
     login() {
       let self = this;
