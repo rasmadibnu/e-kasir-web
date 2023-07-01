@@ -66,7 +66,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view :user="auth.user" />
     </q-page-container>
   </q-layout>
   <q-dialog v-model="alert">
@@ -83,7 +83,7 @@
       </q-card-section>
 
       <q-card-actions align="right">
-        <q-btn flat label="Yes" color="negative" @click="logout" />
+        <q-btn flat label="Yes" no-caps color="negative" @click="logout" />
       </q-card-actions>
     </q-card>
   </q-dialog>
@@ -126,27 +126,23 @@ const linksList = [
 const linksList2 = [
   {
     title: "Kategori Produk",
-    caption: "github.com/quasarframework",
     icon: "Category",
-    link: "https://github.com/quasarframework",
+    link: "Kategori",
   },
   {
     title: "Produk",
-    caption: "github.com/quasarframework",
     icon: "Box",
-    link: "https://github.com/quasarframework",
+    link: "Produk",
   },
   {
     title: "Supplier",
-    caption: "github.com/quasarframework",
     icon: "Building",
-    link: "https://github.com/quasarframework",
+    link: "Supplier",
   },
   {
     title: "User",
-    caption: "quasar.dev",
     icon: "Profile2User",
-    link: "https://quasar.dev",
+    link: "User",
   },
 ];
 

@@ -3,7 +3,6 @@ const requireAuth = (to, from, next) => {
     sessionStorage.getItem("access_token") == null
       ? null
       : JSON.parse(atob(sessionStorage.getItem("access_token").split(".")[1]));
-  console.log(token);
   if (token === null) {
     next("/login");
   }
@@ -44,7 +43,7 @@ const routes = [
 
       {
         path: "/kategori",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Master/Kategori.vue"),
         name: "Kategori",
       },
       {
