@@ -45,7 +45,6 @@
                 </template>
               </q-input>
               <q-btn
-                no-caps
                 type="submit"
                 unelevated
                 color="primary"
