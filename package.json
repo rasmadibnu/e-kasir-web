@@ -13,7 +13,6 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "@quasar/babel-preset-app": "^2.0.2",
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
     "moment": "^2.29.4",
@@ -29,7 +28,6 @@
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.0.0",
-    "eslint-webpack-plugin": "^3.1.1",
     "postcss": "^8.4.14",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.3.2"
