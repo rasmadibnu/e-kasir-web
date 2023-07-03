@@ -48,17 +48,17 @@ const routes = [
       },
       {
         path: "/produk",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Master/Produk.vue"),
         name: "Produk",
       },
       {
         path: "/supplier",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Master/Supplier.vue"),
         name: "Supplier",
       },
       {
         path: "/user",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Master/User.vue"),
         name: "User",
       },
     ],

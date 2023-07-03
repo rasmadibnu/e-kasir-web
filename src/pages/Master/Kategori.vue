@@ -155,7 +155,7 @@ const columns = [
     name: "Created",
     label: "Created By",
     align: "left",
-    field: (row) => row.user_create.name,
+    field: (row) => row.user_create?.name,
     sortable: true,
   },
   {
@@ -212,6 +212,7 @@ export default defineComponent({
     },
     openDialog(data) {
       if (!data) {
+        this.form = { ...initial_form };
         this.is_edit = false;
       } else {
         this.is_edit = true;

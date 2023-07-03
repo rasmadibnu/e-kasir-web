@@ -8,8 +8,10 @@ import { useAuthStore } from "src/stores/auth";
 // good idea to move this instance creation inside of the
 // "export default () => {}" function below (which runs individually
 // for each client)
+
+const url = "http://api-kasir.taxacode.com/api/v1";
 const api = axios.create({
-  baseURL: "http://api-kasir.taxacode.com/api/v1",
+  baseURL: url,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -30,6 +32,8 @@ export default boot(({ app }) => {
   //       so you won't necessarily have to import axios in each vue file
 
   app.config.globalProperties.$api = api;
+
+  app.config.globalProperties.$urlapi = url;
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
 });

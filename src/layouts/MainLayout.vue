@@ -107,7 +107,7 @@ const linksList = [
     link: "Transaksi",
   },
   {
-    title: "Stok",
+    title: "Re-Stok",
     icon: "BoxAdd",
     link: "Stok",
   },
