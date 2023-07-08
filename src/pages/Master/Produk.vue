@@ -144,7 +144,7 @@
             filled
             label="Kategori"
             :rules="[(val) => !!val || 'This field is required']"
-            :class="!is_edit ? 'tw-col-span-2' : 'tw-col-span-3'"
+            class="tw-col-span-3"
           />
           <q-select
             :options="supplier"
@@ -154,7 +154,7 @@
             filled
             label="Supplier"
             :rules="[(val) => !!val || 'This field is required']"
-            :class="!is_edit ? 'tw-col-span-2' : 'tw-col-span-3'"
+            class="tw-col-span-3"
           />
           <q-input
             v-if="!is_edit"
@@ -164,7 +164,18 @@
             mask="#"
             reverse-fill-mask
             :rules="[(val) => !!val || 'This field is required']"
-            class="tw-col-span-2"
+            class="tw-col-span-3"
+          />
+          <q-input
+            v-model="form.harga"
+            filled
+            label="Harga"
+            prefix="Rp."
+            mask="###.###.###.###"
+            reverse-fill-mask
+            unmasked-value
+            :rules="[(val) => !!val || 'This field is required']"
+            class="tw-col-span-3"
           />
         </q-card-section>
 
@@ -272,6 +283,7 @@ const initial_form = {
   deskripsi: "",
   kategori_id: null,
   supplier_id: null,
+  harga: null,
   file: null,
   stok: null,
 };
@@ -343,6 +355,7 @@ export default defineComponent({
     },
     openDialog(data) {
       if (!data) {
+        this.src = null;
         this.form = { ...initial_form };
         this.is_edit = false;
       } else {

@@ -96,7 +96,16 @@ export default defineComponent({
         .then(function (response) {
           sessionStorage.setItem("access_token", response.data.data);
           self.auth.token = response.data.data;
-          self.$router.push({ name: "Home" });
+          if (self.auth.user.role != "Kasir") {
+            self.$router.push({ name: "Home" });
+          } else {
+            self.$q.notify({
+              type: "negative",
+              message:
+                "User dengan role Kasir tidak memiliki akses pada web ini",
+            });
+            sessionStorage.removeItem("access_token");
+          }
           self.loading = false;
         })
         .catch((err) => {

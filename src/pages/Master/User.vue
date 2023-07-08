@@ -204,6 +204,13 @@ const columns = [
     sortable: true,
   },
   {
+    name: "Username",
+    label: "Username",
+    align: "left",
+    field: "username",
+    sortable: true,
+  },
+  {
     name: "Role",
     label: "Role",
     align: "left",
