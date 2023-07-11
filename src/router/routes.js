@@ -22,12 +22,12 @@ const routes = [
       },
       {
         path: "/transaksi",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Transaksi.vue"),
         name: "Transaksi",
       },
       {
         path: "/stok",
-        component: () => import("pages/UnderConstruction.vue"),
+        component: () => import("pages/Restok.vue"),
         name: "Stok",
       },
       {
@@ -48,8 +48,13 @@ const routes = [
       },
       {
         path: "/produk",
-        component: () => import("pages/Master/Produk.vue"),
+        component: () => import("pages/Master/Produk/Index.vue"),
         name: "Produk",
+      },
+      {
+        path: "/produk/:id/:from",
+        component: () => import("pages/Master/Produk/Detail.vue"),
+        name: "ProdukDetail",
       },
       {
         path: "/supplier",

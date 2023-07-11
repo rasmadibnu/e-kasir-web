@@ -38,6 +38,22 @@
                   clickable
                   v-ripple
                   class="text-primary"
+                  :to="{
+                    name: 'ProdukDetail',
+                    params: { id: props.row.id, from: 'Produk' },
+                  }"
+                >
+                  <q-item-section avatar>
+                    <vx-icon iconName="Eye" :size="20" />
+                  </q-item-section>
+
+                  <q-item-section>View</q-item-section>
+                </q-item>
+                <q-separator />
+                <q-item
+                  clickable
+                  v-ripple
+                  class="text-primary"
                   @click="openDialog(props.row)"
                 >
                   <q-item-section avatar>
@@ -117,7 +133,7 @@
             v-model="form.file"
             clearable
             @update:model-value="onFilePicked"
-            :hint="form.image.split('\\')[1]"
+            :hint="form.image"
           >
             <template #append>
               <q-icon name="attachment" />
@@ -167,7 +183,7 @@
             class="tw-col-span-3"
           />
           <q-input
-            v-model="form.harga"
+            v-model.number="form.harga"
             filled
             label="Harga"
             prefix="Rp."
@@ -175,7 +191,7 @@
             reverse-fill-mask
             unmasked-value
             :rules="[(val) => !!val || 'This field is required']"
-            class="tw-col-span-3"
+            :class="is_edit ? 'tw-col-span-6' : 'tw-col-span-3'"
           />
         </q-card-section>
 
@@ -241,6 +257,13 @@ const columns = [
     label: "Kategori",
     align: "left",
     field: (row) => row.kategori?.name,
+    sortable: true,
+  },
+  {
+    name: "Harga",
+    label: "Harga",
+    align: "left",
+    field: "harga_rp",
     sortable: true,
   },
   {
