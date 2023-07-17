@@ -116,11 +116,11 @@ const linksList = [
     icon: "Car",
     link: "Kurir",
   },
-  {
-    title: "Laporan",
-    icon: "DocumentText",
-    link: "Laporan",
-  },
+  // {
+  //   title: "Laporan",
+  //   icon: "DocumentText",
+  //   link: "Laporan",
+  // },
 ];
 
 const linksList2 = [

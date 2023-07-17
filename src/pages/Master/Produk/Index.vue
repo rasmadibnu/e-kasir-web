@@ -176,7 +176,7 @@
             v-if="!is_edit"
             v-model="form.stok"
             filled
-            label="Stok"
+            label="Stok Awal"
             mask="#"
             reverse-fill-mask
             :rules="[(val) => !!val || 'This field is required']"

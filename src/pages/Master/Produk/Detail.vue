@@ -96,7 +96,12 @@
           </q-tab-panel>
 
           <q-tab-panel name="chart">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <vue-apex-charts
+              type="area"
+              height="350"
+              :options="chartOptions"
+              :series="series"
+            ></vue-apex-charts>
           </q-tab-panel>
         </q-tab-panels>
       </q-card-section>
@@ -136,10 +141,11 @@
 import { defineComponent, ref } from "vue";
 import VxIcon from "components/VxIcon.vue";
 import moment from "moment";
+import VueApexCharts from "vue3-apexcharts";
+
 export default defineComponent({
   props: ["user"],
-  components: { VxIcon },
-
+  components: { VueApexCharts, VxIcon },
   setup() {
     const columns = [
       {
@@ -192,6 +198,40 @@ export default defineComponent({
       tab: ref("table"),
       confirm: ref(false),
       new_stok: ref(),
+
+      series: ref([
+        {
+          name: "Stok",
+          data: [],
+        },
+      ]),
+      chartOptions: ref({
+        chart: {
+          type: "area",
+          height: 350,
+          zoom: {
+            enabled: false,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        colors: ["#1976D2"],
+        labels: [],
+        xaxis: {
+          type: "datetime",
+        },
+        yaxis: {
+          labels: {
+            formatter: (value) => {
+              return value.toFixed(0);
+            },
+          },
+        },
+        legend: {
+          horizontalAlign: "left",
+        },
+      }),
     };
   },
   mounted() {
@@ -201,6 +241,12 @@ export default defineComponent({
     getData() {
       this.$api.get("/produk/" + this.$route.params.id).then((response) => {
         this.produk = response.data.data;
+        this.produk.history_stok.forEach((history) => {
+          this.series[0].data.push(history.stok);
+          this.chartOptions.labels.push(history.created_at);
+        });
+
+        console.log(this.series);
       });
     },
     submit() {

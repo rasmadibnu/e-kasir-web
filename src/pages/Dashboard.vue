@@ -1,5 +1,5 @@
 <template>
-  <q-page class="tw-p-4">
+  <q-page class="tw-p-4 tw-pb-20">
     <div class="tw-text-xl tw-mb-4 tw-font-semibold">Dashboard</div>
     <div class="tw-container tw-mx-auto tw-grid">
       <div class="tw-grid tw-gap-4 tw-mb-4 md:tw-grid-cols-2 xl:tw-grid-cols-4">
@@ -58,7 +58,7 @@
       </div>
     </div>
     <q-card flat>
-      <q-card-section class="tw-text-lg"> Chart Tahunan </q-card-section>
+      <q-card-section class="tw-text-lg"> Chart Bulanan </q-card-section>
       <q-card-section class="q-pt-none">
         <q-tabs
           v-model="tab"
