@@ -24,9 +24,7 @@
           <q-td>
             {{ props.rowIndex + 1 }}
           </q-td>
-          <q-td>
-            {{ props.row.no_transaksi }}
-          </q-td>
+          <q-td class="tw-font-semibold"> #{{ props.row.no_transaksi }} </q-td>
           <q-td>
             {{ props.row.user_create.name }}
           </q-td>
@@ -70,16 +68,23 @@
                     sortable: true,
                   },
                   {
+                    name: 'Harga',
+                    label: 'Harga',
+                    align: 'left',
+                    field: (row) => row.harga_rp,
+                    sortable: true,
+                  },
+                  {
                     name: 'Produk',
                     label: 'Jumlah Beli',
-                    align: 'left',
+                    align: 'center',
                     field: 'jumlah_beli',
                     sortable: true,
                   },
                   {
                     name: 'Subtotal',
                     label: 'Subtotal',
-                    align: 'left',
+                    align: 'right',
                     field: (row) =>
                       this.rupiah(row.produk.harga * row.jumlah_beli),
                     sortable: true,

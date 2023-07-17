@@ -61,7 +61,7 @@
     <q-card style="width: 400px">
       <q-card-section>
         <div class="text-h6 tw-flex tw-items-center">
-          <VxIcon iconName="Warning2" class="tw-mr-2" :size="22" />
+          <VxIcon iconName="BoxAdd" class="tw-mr-2" :size="22" />
           Re-Stok
         </div>
       </q-card-section>
