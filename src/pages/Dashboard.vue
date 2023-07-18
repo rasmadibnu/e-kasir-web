@@ -336,11 +336,13 @@ export default defineComponent({
             findSeries.sum += element.total_belanja;
           });
 
-          this.kasirProductive = this.kasirProductive.sort(
-            (a, b) => a.transaksi - b.transaksi
-          );
+          this.kasirProductive = this.kasirProductive
+            .sort((a, b) => a.transaksi - b.transaksi)
+            .reverse();
 
-          this.bestSelling = this.bestSelling.sort((a, b) => a.count - b.count);
+          this.bestSelling = this.bestSelling
+            .sort((a, b) => a.count - b.count)
+            .reverse();
 
           this.series[0].data = series.map((series) => series.count);
           this.seriesUang[0].data = series.map((series) => series.sum);
